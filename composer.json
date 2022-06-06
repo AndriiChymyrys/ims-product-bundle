@@ -1,0 +1,8 @@
+{
+    "name": "widemorph/ims-product-bundle",
+    "autoload": {
+        "psr-4": {
+            "WideMorph\\Ims\\Bundle\\ImsProductBundle\\": ""
+        }
+    }
+}
