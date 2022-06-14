@@ -4,11 +4,12 @@ declare(strict_types=1);
 
 namespace WideMorph\Ims\Bundle\ImsProductBundle;
 
+use Symfony\Component\HttpKernel\Bundle\Bundle;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Extension\ExtensionInterface;
-use Symfony\Component\HttpKernel\Bundle\Bundle;
-use WideMorph\Ims\Bundle\ImsProductBundle\Infrastructure\DependencyInjection\Compiler\SideBarLinkCompilerPass;
 use WideMorph\Ims\Bundle\ImsProductBundle\Infrastructure\DependencyInjection\ImsProductExtension;
+use WideMorph\Ims\Bundle\ImsProductBundle\Infrastructure\DependencyInjection\Compiler\MorphExternalConfigPass;
+use WideMorph\Ims\Bundle\ImsProductBundle\Infrastructure\DependencyInjection\Compiler\SideBarLinkCompilerPass;
 
 /**
  * Class ImsProductBundle
@@ -23,6 +24,7 @@ class ImsProductBundle extends Bundle
     public function build(ContainerBuilder $container): void
     {
         $container->addCompilerPass(new SideBarLinkCompilerPass());
+        $container->addCompilerPass(new MorphExternalConfigPass());
     }
 
     /**
