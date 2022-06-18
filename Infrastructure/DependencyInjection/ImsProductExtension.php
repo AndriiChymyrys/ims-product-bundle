@@ -27,5 +27,6 @@ class ImsProductExtension extends Extension
         );
 
         $loader->load('presentation.xml');
+        $loader->load('interaction.xml');
     }
 }

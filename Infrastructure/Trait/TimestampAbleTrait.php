@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace WideMorph\Ims\Bundle\ImsProductBundle\Infrastructure\Entity\Trait;
+namespace WideMorph\Ims\Bundle\ImsProductBundle\Infrastructure\Trait;
 
 use DateTime;
 use Doctrine\ORM\Mapping as ORM;

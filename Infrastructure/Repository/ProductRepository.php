@@ -19,4 +19,9 @@ class ProductRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, $entityClass);
     }
+
+    public function getList()
+    {
+
+    }
 }

@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace WideMorph\Ims\Bundle\ImsProductBundle\Infrastructure\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use WideMorph\Ims\Bundle\ImsProductBundle\Infrastructure\Entity\Trait\TimestampAbleTrait;
+use WideMorph\Ims\Bundle\ImsProductBundle\Infrastructure\Trait\TimestampAbleTrait;
 
 /**
  * Class ProductImage
