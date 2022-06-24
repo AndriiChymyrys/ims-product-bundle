@@ -7,7 +7,7 @@ namespace WideMorph\Ims\Bundle\ImsProductBundle\Infrastructure\Trait;
 use DateTime;
 use Doctrine\ORM\Mapping as ORM;
 
-trait TimestampAbleTrait
+trait TimestampAbleEntityTrait
 {
     /**
      * @ORM\Column(type="datetime", name="created_at")

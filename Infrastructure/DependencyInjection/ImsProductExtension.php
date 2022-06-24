@@ -26,6 +26,7 @@ class ImsProductExtension extends Extension
             new FileLocator(__DIR__ . '/../../Resources/config')
         );
 
+        $loader->load('domain.xml');
         $loader->load('presentation.xml');
         $loader->load('interaction.xml');
     }

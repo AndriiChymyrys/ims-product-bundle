@@ -20,5 +20,5 @@ interface MorphConfigInteractionInterface
     public const DB_PREFIX_SETTING_NAME = ExternalBundleConfigInterface::DB_PREFIX_SETTING_NAME;
 
     /** @var string */
-    public const DB_TABLE_NAME = ExternalBundleConfigInterface::DB_TABLE_NAME;
+    public const DB_TABLE_SETTING_NAME = ExternalBundleConfigInterface::DB_TABLE_SETTING_NAME;
 }

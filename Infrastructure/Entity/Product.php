@@ -7,7 +7,7 @@ namespace WideMorph\Ims\Bundle\ImsProductBundle\Infrastructure\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\Common\Collections\ArrayCollection;
-use WideMorph\Ims\Bundle\ImsProductBundle\Infrastructure\Trait\TimestampAbleTrait;
+use WideMorph\Ims\Bundle\ImsProductBundle\Infrastructure\Trait\TimestampAbleEntityTrait;
 
 /**
  * Class Product
@@ -16,7 +16,7 @@ use WideMorph\Ims\Bundle\ImsProductBundle\Infrastructure\Trait\TimestampAbleTrai
  */
 class Product
 {
-    use TimestampAbleTrait;
+    use TimestampAbleEntityTrait;
 
     /**
      * @ORM\Id
