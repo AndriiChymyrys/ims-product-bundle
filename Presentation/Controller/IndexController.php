@@ -8,6 +8,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use WideMorph\Ims\Bundle\ImsProductBundle\Domain\Constraint\OrderProductFilterConstraint;
 use WideMorph\Ims\Bundle\ImsProductBundle\Interaction\MorphCoreInteractionInterface;
+use WideMorph\Morph\Bundle\MorphCoreBundle\Domain\Services\Input\InputDataFactoryInterface;
 
 class IndexController extends AbstractController
 {
@@ -16,10 +17,12 @@ class IndexController extends AbstractController
      */
     public function index(
         MorphCoreInteractionInterface $morphCoreInteraction,
-        OrderProductFilterConstraint $orderProductFilterConstraint
+        OrderProductFilterConstraint $orderProductFilterConstraint,
+        InputDataFactoryInterface $inputDataFactory
     ): Response {
-        $morphCoreInteraction->getDomainInteraction()->getRequestValidationService()->validate(
-            $orderProductFilterConstraint
+        $morphCoreInteraction->getDomainInteraction()->getConstraintValidationService()->validate(
+            $orderProductFilterConstraint,
+            $inputDataFactory->fromRequest()
         );
 
 //        $morphCoreInteraction->getEntityResolver();
