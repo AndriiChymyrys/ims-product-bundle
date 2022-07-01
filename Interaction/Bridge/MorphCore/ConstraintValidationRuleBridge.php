@@ -11,7 +11,7 @@ use WideMorph\Morph\Bundle\MorphCoreBundle\Domain\Services\ConstraintValidation\
  *
  * @package WideMorph\Ims\Bundle\ImsProductBundle\Interaction\Bridge\MorphCore
  */
-abstract class ConstraintValidationRule extends BaseConstraintValidationRule
+abstract class ConstraintValidationRuleBridge extends BaseConstraintValidationRule
 {
 
 }

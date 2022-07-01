@@ -6,14 +6,14 @@ namespace WideMorph\Ims\Bundle\ImsProductBundle\Domain\Constraint;
 
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Component\Validator\Constraints\Collection;
-use WideMorph\Ims\Bundle\ImsProductBundle\Interaction\Bridge\MorphCore\ConstraintValidationRule;
+use WideMorph\Ims\Bundle\ImsProductBundle\Interaction\Bridge\MorphCore\ConstraintValidationRuleBridge;
 
 /**
  * Class OrderProductFilterConstraint
  *
  * @package WideMorph\Ims\Bundle\ImsProductBundle\Domain\Constraint
  */
-class OrderProductFilterConstraint extends ConstraintValidationRule
+class OrderProductFilterConstraint extends ConstraintValidationRuleBridge
 {
     public function getConstraints(): Collection
     {

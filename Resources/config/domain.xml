@@ -7,5 +7,10 @@
     <services>
         <service id="WideMorph\Ims\Bundle\ImsProductBundle\Domain\Constraint\OrderProductFilterConstraint">
         </service>
+        <service id="WideMorph\Ims\Bundle\ImsProductBundle\Domain\Services\SelectProductDataSource"
+                 autoconfigure="true">
+            <argument type="service" key="$orderProductFilterConstraint"
+                      id="WideMorph\Ims\Bundle\ImsProductBundle\Domain\Constraint\OrderProductFilterConstraint"/>
+        </service>
     </services>
 </container>
