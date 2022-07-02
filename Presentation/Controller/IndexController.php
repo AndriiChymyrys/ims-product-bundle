@@ -17,7 +17,10 @@ class IndexController extends AbstractController
     public function index(
         MorphCoreInteractionInterface $morphCoreInteraction,
     ): Response {
-        $morphCoreInteraction->getDomainInteraction()->getSelectDataSourceService()->execute(SelectProductDataSource::class);
+        $outputData = $morphCoreInteraction
+            ->getDomainInteraction()
+            ->getSelectDataSourceService()
+            ->execute(SelectProductDataSource::class);
 
 //        $morphCoreInteraction->getEntityResolver();
 

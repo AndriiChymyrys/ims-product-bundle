@@ -11,6 +11,10 @@
                  autoconfigure="true">
             <argument type="service" key="$orderProductFilterConstraint"
                       id="WideMorph\Ims\Bundle\ImsProductBundle\Domain\Constraint\OrderProductFilterConstraint"/>
+            <argument type="service" key="$entityManager"
+                      id="Doctrine\ORM\EntityManagerInterface"/>
+            <argument type="service" key="$morphCoreInteraction"
+                      id="WideMorph\Ims\Bundle\ImsProductBundle\Interaction\MorphCoreInteractionInterface"/>
         </service>
     </services>
 </container>
