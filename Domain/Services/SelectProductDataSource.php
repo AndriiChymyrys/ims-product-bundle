@@ -7,6 +7,7 @@ namespace WideMorph\Ims\Bundle\ImsProductBundle\Domain\Services;
 use Doctrine\ORM\EntityManagerInterface;
 use WideMorph\Ims\Bundle\ImsProductBundle\Interaction\MorphCoreInteractionInterface;
 use WideMorph\Ims\Bundle\ImsProductBundle\Domain\Constraint\OrderProductFilterConstraint;
+use WideMorph\Morph\Bundle\MorphCoreBundle\Domain\Services\Input\InputDataCollectionInterface;
 use WideMorph\Morph\Bundle\MorphCoreBundle\Domain\Services\Contracts\SelectDataSourceInterface;
 use WideMorph\Morph\Bundle\MorphCoreBundle\Domain\Services\Contracts\ConstraintValidationRulesInterface;
 use WideMorph\Ims\Bundle\ImsProductBundle\Interaction\Bridge\MorphCore\SelectDataSourceDefinitionInterfaceBridge;
@@ -18,6 +19,9 @@ use WideMorph\Ims\Bundle\ImsProductBundle\Interaction\Bridge\MorphCore\SelectDat
  */
 class SelectProductDataSource implements SelectDataSourceDefinitionInterfaceBridge
 {
+    /** @var int */
+    public const PER_PAGE = 20;
+
     /**
      * @param OrderProductFilterConstraint $orderProductFilterConstraint
      * @param EntityManagerInterface $entityManager
@@ -46,5 +50,15 @@ class SelectProductDataSource implements SelectDataSourceDefinitionInterfaceBrid
         return $this->entityManager->getRepository(
             $this->morphCoreInteraction->getEntityResolver()->getEntityName('Product')
         );
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getSourcePagination(InputDataCollectionInterface $inputDataCollection): ?array
+    {
+        $page = $inputDataCollection->containsKey('page') ? $inputDataCollection->get('page') : 1;
+
+        return [$page, static::PER_PAGE];
     }
 }

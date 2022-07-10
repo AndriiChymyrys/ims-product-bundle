@@ -22,8 +22,6 @@ class IndexController extends AbstractController
             ->getSelectDataSourceService()
             ->execute(SelectProductDataSource::class);
 
-//        $morphCoreInteraction->getEntityResolver();
-
         return $this->render('@ImsProduct/index/index.html.twig');
     }
 }

@@ -18,11 +18,11 @@ class OrderProductFilterConstraint extends ConstraintValidationRuleBridge
     public function getConstraints(): Collection
     {
         return new Assert\Collection([
-            'name' => new Assert\Collection([
-                'firstName' => new Assert\Type('string'),
-                'secondName' => new Assert\Type('string')
-            ]),
-            'email' => new Assert\Email()
+//            'name' => new Assert\Collection([
+//                'firstName' => new Assert\Type('string'),
+//                'secondName' => new Assert\Type('string')
+//            ]),
+//            'email' => new Assert\Email()
         ]);
     }
 }

@@ -39,7 +39,7 @@ class Product
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\ProductImage", mappedBy="product")
      */
-    protected ArrayCollection $images;
+    protected Collection $images;
 
     public function __construct()
     {
