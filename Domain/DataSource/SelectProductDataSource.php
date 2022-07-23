@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace WideMorph\Ims\Bundle\ImsProductBundle\Domain\Services;
+namespace WideMorph\Ims\Bundle\ImsProductBundle\Domain\DataSource;
 
 use Doctrine\ORM\EntityManagerInterface;
 use WideMorph\Ims\Bundle\ImsProductBundle\Interaction\MorphCoreInteractionInterface;
@@ -11,13 +11,15 @@ use WideMorph\Morph\Bundle\MorphCoreBundle\Domain\Services\Input\InputDataCollec
 use WideMorph\Morph\Bundle\MorphCoreBundle\Domain\Services\Contracts\SelectDataSourceInterface;
 use WideMorph\Morph\Bundle\MorphCoreBundle\Domain\Services\Contracts\ConstraintValidationRulesInterface;
 use WideMorph\Ims\Bundle\ImsProductBundle\Interaction\Bridge\MorphCore\SelectDataSourceDefinitionInterfaceBridge;
+use WideMorph\Ims\Bundle\ImsProductBundle\Interaction\Bridge\MorphCore\ConstraintDataSourceDefinitionInterfaceBridge;
 
 /**
  * Class SelectProductDataSource
  *
- * @package WideMorph\Ims\Bundle\ImsProductBundle\Domain\Services
+ * @package WideMorph\Ims\Bundle\ImsProductBundle\Domain\DataSource
  */
-class SelectProductDataSource implements SelectDataSourceDefinitionInterfaceBridge
+class SelectProductDataSource implements SelectDataSourceDefinitionInterfaceBridge,
+                                         ConstraintDataSourceDefinitionInterfaceBridge
 {
     /** @var int */
     public const PER_PAGE = 20;
@@ -37,7 +39,7 @@ class SelectProductDataSource implements SelectDataSourceDefinitionInterfaceBrid
     /**
      * {@inheritDoc}
      */
-    public function getConstraint(): null|ConstraintValidationRulesInterface
+    public function getConstraint(): ConstraintValidationRulesInterface
     {
         return $this->orderProductFilterConstraint;
     }

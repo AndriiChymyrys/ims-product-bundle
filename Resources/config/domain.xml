@@ -7,7 +7,12 @@
     <services>
         <service id="WideMorph\Ims\Bundle\ImsProductBundle\Domain\Constraint\OrderProductFilterConstraint">
         </service>
-        <service id="WideMorph\Ims\Bundle\ImsProductBundle\Domain\Services\SelectProductDataSource"
+        <service id="WideMorph\Ims\Bundle\ImsProductBundle\Domain\Services\CreateProductService">
+        </service>
+        <service id="WideMorph\Ims\Bundle\ImsProductBundle\Domain\Services\CreateProductServiceInterface"
+                 alias="WideMorph\Ims\Bundle\ImsProductBundle\Domain\Services\CreateProductService">
+        </service>
+        <service id="WideMorph\Ims\Bundle\ImsProductBundle\Domain\DataSource\SelectProductDataSource"
                  autoconfigure="true">
             <argument type="service" key="$orderProductFilterConstraint"
                       id="WideMorph\Ims\Bundle\ImsProductBundle\Domain\Constraint\OrderProductFilterConstraint"/>
@@ -15,6 +20,11 @@
                       id="Doctrine\ORM\EntityManagerInterface"/>
             <argument type="service" key="$morphCoreInteraction"
                       id="WideMorph\Ims\Bundle\ImsProductBundle\Interaction\MorphCoreInteractionInterface"/>
+        </service>
+        <service id="WideMorph\Ims\Bundle\ImsProductBundle\Domain\DataSource\CreateProductDataSource"
+                 autoconfigure="true">
+            <argument type="service" key="$createProductService"
+                      id="WideMorph\Ims\Bundle\ImsProductBundle\Domain\Services\CreateProductServiceInterface"/>
         </service>
     </services>
 </container>
