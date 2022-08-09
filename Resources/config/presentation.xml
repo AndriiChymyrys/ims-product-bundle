@@ -10,5 +10,11 @@
         <service id="WideMorph\Ims\Bundle\ImsProductBundle\Presentation\Controller\IndexController">
             <tag name="controller.service_arguments"/>
         </service>
+
+        <service id="WideMorph\Ims\Bundle\ImsProductBundle\Presentation\Form\Type\CreateProductForm">
+            <argument type="service" key="$morphCoreInteraction"
+                      id="WideMorph\Ims\Bundle\ImsProductBundle\Interaction\MorphCoreInteractionInterface"/>
+            <tag name="form.type"/>
+        </service>
     </services>
 </container>

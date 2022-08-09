@@ -35,13 +35,12 @@ class IndexController extends AbstractController
      */
     public function create(
         MorphCoreInteractionInterface $morphCoreInteraction,
-    ): Response
-    {
+    ): Response {
         $outputData = $morphCoreInteraction
             ->getDomainInteraction()
             ->getCreateDataSourceService()
             ->execute(CreateProductDataSource::class);
 
-        return $this->render('@ImsProduct/index/create.html.twig');
+        return $this->render('@ImsProduct/index/create.html.twig', ['output' => $outputData]);
     }
 }

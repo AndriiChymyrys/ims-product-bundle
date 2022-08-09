@@ -8,6 +8,8 @@
         <service id="WideMorph\Ims\Bundle\ImsProductBundle\Domain\Constraint\OrderProductFilterConstraint">
         </service>
         <service id="WideMorph\Ims\Bundle\ImsProductBundle\Domain\Services\CreateProductService">
+            <argument type="service" key="$entityManager"
+                      id="Doctrine\ORM\EntityManagerInterface"/>
         </service>
         <service id="WideMorph\Ims\Bundle\ImsProductBundle\Domain\Services\CreateProductServiceInterface"
                  alias="WideMorph\Ims\Bundle\ImsProductBundle\Domain\Services\CreateProductService">

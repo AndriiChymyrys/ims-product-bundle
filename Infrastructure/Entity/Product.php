@@ -13,7 +13,8 @@ use WideMorph\Ims\Bundle\ImsProductBundle\Infrastructure\Trait\TimestampAbleEnti
  * Class Product
  *
  * @package WideMorph\Ims\Bundle\ImsProductBundle\Infrastructure\Entity
- * @repositoryClass App\Repository\ProductRepository
+ * !!repositoryClass App\Repository\ProductRepository
+ * !!hasLifecycleCallbacks
  */
 class Product
 {

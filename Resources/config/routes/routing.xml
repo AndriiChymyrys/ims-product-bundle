@@ -7,7 +7,7 @@
     <route id="ims_product_list" path="/" methods="GET"
            controller="WideMorph\Ims\Bundle\ImsProductBundle\Presentation\Controller\IndexController::index">
     </route>
-        <route id="ims_product_create" path="/create" methods="GET"
+    <route id="ims_product_create" path="/create" methods="GET,POST"
            controller="WideMorph\Ims\Bundle\ImsProductBundle\Presentation\Controller\IndexController::create">
     </route>
 

@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace WideMorph\Ims\Bundle\ImsProductBundle\Domain\DataSource;
 
 use WideMorph\Ims\Bundle\ImsProductBundle\Domain\Services\CreateProductServiceInterface;
-use WideMorph\Ims\Bundle\ImsProductBundle\Presentation\Controller\Form\Type\CreateProductForm;
+use WideMorph\Ims\Bundle\ImsProductBundle\Presentation\Form\Type\CreateProductForm;
 use WideMorph\Morph\Bundle\MorphCoreBundle\Domain\Services\Contracts\CreateDataSourceInterface;
 use WideMorph\Ims\Bundle\ImsProductBundle\Interaction\Bridge\MorphCore\FormDataSourceDefinitionInterfaceBridge;
 use WideMorph\Ims\Bundle\ImsProductBundle\Interaction\Bridge\MorphCore\CreateDataSourceDefinitionInterfaceBridge;
