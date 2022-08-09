@@ -38,7 +38,7 @@
                                 <td>{{ product.createdAt|date('Y-m-d') }}</td>
                                 <td>
                                     <div class="btn-group">
-                                        <button type="button" class="btn btn-info">Edit</button>
+                                        <a href="{{ path('product_ims_product_update', {'id': product.id}) }}" class="btn btn-info">Edit</a>
                                     </div>
                                 </td>
                             </tr>

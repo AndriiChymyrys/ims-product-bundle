@@ -14,6 +14,15 @@
         <service id="WideMorph\Ims\Bundle\ImsProductBundle\Domain\Services\CreateProductServiceInterface"
                  alias="WideMorph\Ims\Bundle\ImsProductBundle\Domain\Services\CreateProductService">
         </service>
+
+        <service id="WideMorph\Ims\Bundle\ImsProductBundle\Domain\Services\UpdateProductService">
+            <argument type="service" key="$entityManager"
+                      id="Doctrine\ORM\EntityManagerInterface"/>
+        </service>
+        <service id="WideMorph\Ims\Bundle\ImsProductBundle\Domain\Services\UpdateProductServiceInterface"
+                 alias="WideMorph\Ims\Bundle\ImsProductBundle\Domain\Services\UpdateProductService">
+        </service>
+
         <service id="WideMorph\Ims\Bundle\ImsProductBundle\Domain\DataSource\SelectProductDataSource"
                  autoconfigure="true">
             <argument type="service" key="$orderProductFilterConstraint"
@@ -23,10 +32,21 @@
             <argument type="service" key="$morphCoreInteraction"
                       id="WideMorph\Ims\Bundle\ImsProductBundle\Interaction\MorphCoreInteractionInterface"/>
         </service>
+
         <service id="WideMorph\Ims\Bundle\ImsProductBundle\Domain\DataSource\CreateProductDataSource"
                  autoconfigure="true">
             <argument type="service" key="$createProductService"
                       id="WideMorph\Ims\Bundle\ImsProductBundle\Domain\Services\CreateProductServiceInterface"/>
+        </service>
+
+        <service id="WideMorph\Ims\Bundle\ImsProductBundle\Domain\DataSource\UpdateProductDataSource"
+                 autoconfigure="true">
+            <argument type="service" key="$updateProductService"
+                      id="WideMorph\Ims\Bundle\ImsProductBundle\Domain\Services\UpdateProductServiceInterface"/>
+            <argument type="service" key="$entityManager"
+                      id="Doctrine\ORM\EntityManagerInterface"/>
+            <argument type="service" key="$morphCoreInteraction"
+                      id="WideMorph\Ims\Bundle\ImsProductBundle\Interaction\MorphCoreInteractionInterface"/>
         </service>
     </services>
 </container>

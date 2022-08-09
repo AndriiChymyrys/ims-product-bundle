@@ -10,5 +10,9 @@
     <route id="ims_product_create" path="/create" methods="GET,POST"
            controller="WideMorph\Ims\Bundle\ImsProductBundle\Presentation\Controller\IndexController::create">
     </route>
+    <route id="ims_product_update" path="/update/{id}" methods="GET,POST"
+           controller="WideMorph\Ims\Bundle\ImsProductBundle\Presentation\Controller\IndexController::update">
+        <requirement key="id">\d+</requirement>
+    </route>
 
 </routes>

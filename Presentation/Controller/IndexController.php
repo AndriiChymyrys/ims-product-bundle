@@ -9,6 +9,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use WideMorph\Ims\Bundle\ImsProductBundle\Domain\DataSource\SelectProductDataSource;
 use WideMorph\Ims\Bundle\ImsProductBundle\Interaction\MorphCoreInteractionInterface;
 use WideMorph\Ims\Bundle\ImsProductBundle\Domain\DataSource\CreateProductDataSource;
+use WideMorph\Ims\Bundle\ImsProductBundle\Domain\DataSource\UpdateProductDataSource;
 
 class IndexController extends AbstractController
 {
@@ -42,5 +43,23 @@ class IndexController extends AbstractController
             ->execute(CreateProductDataSource::class);
 
         return $this->render('@ImsProduct/index/create.html.twig', ['output' => $outputData]);
+    }
+
+    /**
+     * @param MorphCoreInteractionInterface $morphCoreInteraction
+     * @param int $id
+     *
+     * @return Response
+     */
+    public function update(
+        MorphCoreInteractionInterface $morphCoreInteraction,
+        int $id
+    ): Response {
+        $outputData = $morphCoreInteraction
+            ->getDomainInteraction()
+            ->getUpdateDataSourceService()
+            ->execute(sourceName: UpdateProductDataSource::class, options: ['productId' => $id]);
+
+        return $this->render('@ImsProduct/index/update.html.twig', ['output' => $outputData]);
     }
 }
