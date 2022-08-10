@@ -7,6 +7,11 @@ namespace WideMorph\Ims\Bundle\ImsProductBundle\Domain\Services;
 use Doctrine\ORM\EntityManagerInterface;
 use WideMorph\Morph\Bundle\MorphCoreBundle\Domain\Services\Input\InputDataCollectionInterface;
 
+/**
+ * Class UpdateProductService
+ *
+ * @package WideMorph\Ims\Bundle\ImsProductBundle\Domain\Services
+ */
 class UpdateProductService implements UpdateProductServiceInterface
 {
     /**
@@ -16,8 +21,16 @@ class UpdateProductService implements UpdateProductServiceInterface
     {
     }
 
+    /**
+     * @param InputDataCollectionInterface $inputDataCollection
+     * @param mixed $updateData
+     *
+     * @return mixed
+     */
     public function update(InputDataCollectionInterface $inputDataCollection, mixed $updateData): mixed
     {
-        return [];
+        $this->entityManager->flush();
+
+        return $updateData;
     }
 }

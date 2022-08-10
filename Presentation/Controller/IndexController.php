@@ -42,6 +42,10 @@ class IndexController extends AbstractController
             ->getCreateDataSourceService()
             ->execute(CreateProductDataSource::class);
 
+        if ($outputData->isSubmitted() && $outputData->isSuccess()) {
+            return $this->redirectToRoute('product_ims_product_list');
+        }
+
         return $this->render('@ImsProduct/index/create.html.twig', ['output' => $outputData]);
     }
 
@@ -59,6 +63,10 @@ class IndexController extends AbstractController
             ->getDomainInteraction()
             ->getUpdateDataSourceService()
             ->execute(sourceName: UpdateProductDataSource::class, options: ['productId' => $id]);
+
+        if ($outputData->isSubmitted() && $outputData->isSuccess()) {
+            return $this->redirectToRoute('product_ims_product_list');
+        }
 
         return $this->render('@ImsProduct/index/update.html.twig', ['output' => $outputData]);
     }
