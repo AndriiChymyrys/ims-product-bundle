@@ -15,7 +15,6 @@ use WideMorph\Ims\Bundle\ImsProductBundle\Interaction\Bridge\MorphCore\UpdateDat
 class UpdateProductDataSource implements UpdateDataSourceDefinitionInterfaceBridge,
                                          FormDataSourceDefinitionInterfaceBridge
 {
-
     /**
      * @param UpdateProductServiceInterface $updateProductService
      * @param EntityManagerInterface $entityManager

@@ -10,6 +10,7 @@ use WideMorph\Ims\Bundle\ImsProductBundle\Domain\DataSource\SelectProductDataSou
 use WideMorph\Ims\Bundle\ImsProductBundle\Interaction\MorphCoreInteractionInterface;
 use WideMorph\Ims\Bundle\ImsProductBundle\Domain\DataSource\CreateProductDataSource;
 use WideMorph\Ims\Bundle\ImsProductBundle\Domain\DataSource\UpdateProductDataSource;
+use WideMorph\Ims\Bundle\ImsProductBundle\Domain\DataSource\DeleteProductDataSource;
 
 class IndexController extends AbstractController
 {
@@ -69,5 +70,23 @@ class IndexController extends AbstractController
         }
 
         return $this->render('@ImsProduct/index/update.html.twig', ['output' => $outputData]);
+    }
+
+    /**
+     * @param MorphCoreInteractionInterface $morphCoreInteraction
+     * @param int $id
+     *
+     * @return Response
+     */
+    public function delete(
+        MorphCoreInteractionInterface $morphCoreInteraction,
+        int $id
+    ): Response {
+        $morphCoreInteraction
+            ->getDomainInteraction()
+            ->getDeleteDataSourceService()
+            ->execute(sourceName: DeleteProductDataSource::class, options: ['productId' => $id]);
+
+        return $this->redirectToRoute('product_ims_product_list');
     }
 }

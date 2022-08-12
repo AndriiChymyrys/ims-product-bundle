@@ -14,5 +14,9 @@
            controller="WideMorph\Ims\Bundle\ImsProductBundle\Presentation\Controller\IndexController::update">
         <requirement key="id">\d+</requirement>
     </route>
+    <route id="ims_product_delete" path="/delete/{id}" methods="GET"
+           controller="WideMorph\Ims\Bundle\ImsProductBundle\Presentation\Controller\IndexController::delete">
+        <requirement key="id">\d+</requirement>
+    </route>
 
 </routes>

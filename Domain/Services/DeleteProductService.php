@@ -8,11 +8,11 @@ use Doctrine\ORM\EntityManagerInterface;
 use WideMorph\Morph\Bundle\MorphCoreBundle\Domain\Services\Input\InputDataCollectionInterface;
 
 /**
- * Class UpdateProductService
+ * Class DeleteProductService
  *
  * @package WideMorph\Ims\Bundle\ImsProductBundle\Domain\Services
  */
-class UpdateProductService implements UpdateProductServiceInterface
+class DeleteProductService implements DeleteProductServiceInterface
 {
     /**
      * @param EntityManagerInterface $entityManager
@@ -24,10 +24,11 @@ class UpdateProductService implements UpdateProductServiceInterface
     /**
      * {@inheritDoc}
      */
-    public function update(InputDataCollectionInterface $inputDataCollection, mixed $target): mixed
+    public function delete(InputDataCollectionInterface $inputDataCollection, mixed $target): mixed
     {
+        $this->entityManager->remove($target);
         $this->entityManager->flush();
 
-        return $target;
+        return true;
     }
 }
