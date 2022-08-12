@@ -22,7 +22,7 @@ class SideBarLinkCompilerPass implements CompilerPassInterface
     {
         if ($container->hasDefinition(MorphViewInteractionInterface::SIDE_BAR_LINK_SERVICE_NAME)) {
             $sideBarLink = $container->getDefinition(MorphViewInteractionInterface::SIDE_BAR_LINK_SERVICE_NAME);
-            $sideBarLink->addMethodCall('addLink', ['product_ims_product_list', 'Product', 1]);
+            $sideBarLink->addMethodCall('addLink', ['product_ims_product_list', 'Product', 200]);
         }
     }
 }
