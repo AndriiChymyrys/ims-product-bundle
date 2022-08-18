@@ -21,6 +21,11 @@ class ProductRepository extends ServiceEntityRepository implements SelectDataSou
     /** @var string */
     public const CONTEXT_NAME_SELECT_PRODUCT = 'select.product.list';
 
+    /**
+     * @param ManagerRegistry $registry
+     * @param MorphCoreInteractionInterface $morphCoreInteraction
+     * @param string $entityClass
+     */
     public function __construct(
         ManagerRegistry $registry,
         protected MorphCoreInteractionInterface $morphCoreInteraction,
@@ -29,6 +34,9 @@ class ProductRepository extends ServiceEntityRepository implements SelectDataSou
         parent::__construct($registry, $entityClass);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     public function select(InputDataCollectionInterface $inputDataCollection, ?array $pagination = null): mixed
     {
         $queryContext = $this->morphCoreInteraction

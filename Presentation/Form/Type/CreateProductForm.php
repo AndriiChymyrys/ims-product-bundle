@@ -25,10 +25,14 @@ class CreateProductForm extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
-        $builder
+        $formBuilder = $this->morphCoreInteraction->getDomainInteraction()->getFormBuilderService();
+
+        $formBuilder
+            ->resetFields()
             ->add('name', TextType::class)
-            ->add('description', TextType::class)
-            ->add('save', SubmitType::class);
+            ->add('description', TextType::class, 2)
+            ->add('save', SubmitType::class, 3)
+            ->build($builder, 'imsCreateProductForm');
     }
 
     /**
