@@ -11,8 +11,16 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use WideMorph\Ims\Bundle\ImsProductBundle\Interaction\MorphCoreInteractionInterface;
 
+/**
+ * Class CreateProductForm
+ *
+ * @package WideMorph\Ims\Bundle\ImsProductBundle\Presentation\Form\Type
+ */
 class CreateProductForm extends AbstractType
 {
+    /** @var string */
+    protected const FORM_BUILDER_NAME = 'imsCreateProductForm';
+
     /**
      * @param MorphCoreInteractionInterface $morphCoreInteraction
      */
@@ -32,7 +40,7 @@ class CreateProductForm extends AbstractType
             ->add('name', TextType::class)
             ->add('description', TextType::class, 2)
             ->add('save', SubmitType::class, 3)
-            ->build($builder, 'imsCreateProductForm');
+            ->build($builder, static::FORM_BUILDER_NAME);
     }
 
     /**

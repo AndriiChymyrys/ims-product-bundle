@@ -6,6 +6,11 @@ namespace WideMorph\Ims\Bundle\ImsProductBundle\Interaction\Bridge\MorphCore;
 
 use WideMorph\Morph\Bundle\MorphCoreBundle\Domain\Services\Contracts\DeleteDataSourceDefinitionInterface;
 
+/**
+ * Class DeleteDataSourceDefinitionInterfaceBridge
+ *
+ * @package WideMorph\Ims\Bundle\ImsProductBundle\Interaction\Bridge\MorphCore
+ */
 interface DeleteDataSourceDefinitionInterfaceBridge extends DeleteDataSourceDefinitionInterface
 {
 }
