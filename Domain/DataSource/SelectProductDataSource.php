@@ -8,8 +8,8 @@ use Doctrine\ORM\EntityManagerInterface;
 use WideMorph\Ims\Bundle\ImsProductBundle\Interaction\MorphCoreInteractionInterface;
 use WideMorph\Ims\Bundle\ImsProductBundle\Domain\Constraint\OrderProductFilterConstraint;
 use WideMorph\Morph\Bundle\MorphCoreBundle\Domain\Services\Input\InputDataCollectionInterface;
-use WideMorph\Morph\Bundle\MorphCoreBundle\Domain\Services\Contracts\SelectDataSourceInterface;
-use WideMorph\Morph\Bundle\MorphCoreBundle\Domain\Services\Contracts\ConstraintValidationRulesInterface;
+use WideMorph\Morph\Bundle\MorphCoreBundle\Interaction\Contract\DataSource\SelectDataSourceInterface;
+use WideMorph\Morph\Bundle\MorphCoreBundle\Interaction\Contract\ConstraintValidationRulesInterface;
 use WideMorph\Ims\Bundle\ImsProductBundle\Interaction\Bridge\MorphCore\SelectDataSourceDefinitionInterfaceBridge;
 use WideMorph\Ims\Bundle\ImsProductBundle\Interaction\Bridge\MorphCore\ConstraintDataSourceDefinitionInterfaceBridge;
 

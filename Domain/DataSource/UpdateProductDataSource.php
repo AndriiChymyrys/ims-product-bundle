@@ -8,7 +8,7 @@ use Doctrine\ORM\EntityManagerInterface;
 use WideMorph\Ims\Bundle\ImsProductBundle\Presentation\Form\Type\CreateProductForm;
 use WideMorph\Ims\Bundle\ImsProductBundle\Interaction\MorphCoreInteractionInterface;
 use WideMorph\Ims\Bundle\ImsProductBundle\Domain\Services\UpdateProductServiceInterface;
-use WideMorph\Morph\Bundle\MorphCoreBundle\Domain\Services\Contracts\UpdateDataSourceInterface;
+use WideMorph\Morph\Bundle\MorphCoreBundle\Interaction\Contract\DataSource\UpdateDataSourceInterface;
 use WideMorph\Ims\Bundle\ImsProductBundle\Interaction\Bridge\MorphCore\FormDataSourceDefinitionInterfaceBridge;
 use WideMorph\Ims\Bundle\ImsProductBundle\Interaction\Bridge\MorphCore\UpdateDataSourceDefinitionInterfaceBridge;
 

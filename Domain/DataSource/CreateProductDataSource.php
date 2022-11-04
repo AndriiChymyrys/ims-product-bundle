@@ -6,7 +6,7 @@ namespace WideMorph\Ims\Bundle\ImsProductBundle\Domain\DataSource;
 
 use WideMorph\Ims\Bundle\ImsProductBundle\Domain\Services\CreateProductServiceInterface;
 use WideMorph\Ims\Bundle\ImsProductBundle\Presentation\Form\Type\CreateProductForm;
-use WideMorph\Morph\Bundle\MorphCoreBundle\Domain\Services\Contracts\CreateDataSourceInterface;
+use WideMorph\Morph\Bundle\MorphCoreBundle\Interaction\Contract\DataSource\CreateDataSourceInterface;
 use WideMorph\Ims\Bundle\ImsProductBundle\Interaction\Bridge\MorphCore\FormDataSourceDefinitionInterfaceBridge;
 use WideMorph\Ims\Bundle\ImsProductBundle\Interaction\Bridge\MorphCore\CreateDataSourceDefinitionInterfaceBridge;
 

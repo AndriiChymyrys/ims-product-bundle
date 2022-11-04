@@ -7,7 +7,7 @@ namespace WideMorph\Ims\Bundle\ImsProductBundle\Domain\DataSource;
 use Doctrine\ORM\EntityManagerInterface;
 use WideMorph\Ims\Bundle\ImsProductBundle\Interaction\MorphCoreInteractionInterface;
 use WideMorph\Ims\Bundle\ImsProductBundle\Domain\Services\DeleteProductServiceInterface;
-use WideMorph\Morph\Bundle\MorphCoreBundle\Domain\Services\Contracts\DeleteDataSourceInterface;
+use WideMorph\Morph\Bundle\MorphCoreBundle\Interaction\Contract\DataSource\DeleteDataSourceInterface;
 use WideMorph\Ims\Bundle\ImsProductBundle\Interaction\Bridge\MorphCore\DeleteDataSourceDefinitionInterfaceBridge;
 
 /**
